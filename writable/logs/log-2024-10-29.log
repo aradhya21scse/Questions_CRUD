@@ -1,0 +1,11 @@
+CRITICAL - 2024-10-29 07:05:24 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: questions]
+in APPPATH\Models\QuestionModel.php on line 83.
+ 1 APPPATH\Controllers\Questions.php(20): App\Models\QuestionModel->getTotalQuestion(null, null)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Questions->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Questions))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\assignment1\\public\\index.php')

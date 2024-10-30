@@ -12,6 +12,7 @@ $routes->add('questions/store', 'Questions::store');
 $routes->add('questions/edit/(:num)', 'Questions::edit/$1');
 $routes->add('questions/update/(:num)', 'Questions::update/$1');
 $routes->add('questions/delete/(:num)', 'Questions::delete/$1');
+$routes->add('questions/export', 'Questions::export');
 
 
 

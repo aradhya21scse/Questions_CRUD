@@ -10,10 +10,12 @@ class QuestionModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['title', 'question', 'answer', 'category_id'];
 
-    public function getAllQuestions($questionperpage,$page,$search = null, $category_id = null)
+    public function getAllQuestions($questionperpage,$page,$search = null, $category_id = null)        //get  all questions with pagination
+
     {
-        $offset=($page-1)* $questionperpage;
-        $sql = "SELECT * FROM questions";
+        $offset=($page-1)* $questionperpage;      //offset for pagination
+        $sql = "SELECT * FROM questions";           
+
         $conditions = [];
         $params = [];
         if ($search) {
@@ -33,7 +35,7 @@ class QuestionModel extends Model
         return $query->getResultArray();
     }
 
-    public function InsertQuestion($data)
+    public function InsertQuestion($data)          //insert questions details in database
     {
         $sql = "INSERT INTO " . $this->table . " (title, question, answer, category_id) VALUES (?, ?, ?, ?)";
         return $this->db->query($sql, [
@@ -44,10 +46,9 @@ class QuestionModel extends Model
         ]);
     }
     
-    public function updateQuestion($id, $data)
+    public function updateQuestion($id, $data)     //update questions details in database
     {
         $sql = "UPDATE " . $this->table . " SET title = ?, question = ?, answer = ?, category_id = ? WHERE id = ?";
-    
         return $this->db->query($sql, [
             $data['title'],
             $data['question'],
@@ -57,13 +58,13 @@ class QuestionModel extends Model
         ]);
     }
     
-    public function deleteQuestion($id)
+    public function deleteQuestion($id)     //deleting questions details in 
     {
         $sql = "DELETE FROM " . $this->table . " WHERE id = ?";
         return $this->db->query($sql, [$id]);
     }
 
-    public function findById($id){
+    public function findById($id){             
         $sql="Select  * from $this->table where id = ?";
         return $this->db->query($sql, [$id])->getRowArray();
 

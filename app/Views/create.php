@@ -73,6 +73,17 @@
 </head>
 <body>
 <h1>Create Question</h1>
+<?php if (!empty($success)): ?>
+    <div style="color: green;">
+        <?= $success ?>
+    </div>
+<?php endif; ?>
+
+<?php if (!empty($error)): ?>
+    <div style="color: red;">
+        <?= $error ?>
+    </div>
+<?php endif; ?>
 
     <form action="/questions/store" method="post">
         <input type="text" name="title" placeholder="Question Title" required>

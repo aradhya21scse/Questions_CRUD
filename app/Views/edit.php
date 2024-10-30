@@ -73,6 +73,17 @@
 </head>
 <body>
 <h1>Edit Question</h1>
+<?php if (!empty($success)): ?>
+    <div style="color: green;">
+        <?= $success ?>
+    </div>
+<?php endif; ?>
+
+<?php if (!empty($error)): ?>
+    <div style="color: red;">
+        <?= $error ?>
+    </div>
+<?php endif; ?>
 
     <form action="/questions/update/<?= $question['id']; ?>" method="post">
         <input type="text" name="title" value="<?= $question['title']; ?>" required>
